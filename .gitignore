@@ -1,6 +1,6 @@
 .idea/
+target/
 out/
 test_server/
-target/
 *.jar
 HW01/
