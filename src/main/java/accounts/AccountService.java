@@ -1,7 +1,7 @@
 package accounts;
 
+import base.DBService;
 import dbService.DBException;
-import dbService.DBService;
 import dbService.dataSets.UsersProfileDataSet;
 
 

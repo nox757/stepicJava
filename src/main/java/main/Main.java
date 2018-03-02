@@ -1,7 +1,8 @@
 package main;
 
 import accounts.AccountService;
-import dbService.DBService;
+import base.DBService;
+import dbService.DBServiceImpl;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
@@ -13,7 +14,7 @@ import servlets.SignUpServlet;
 public class Main {
     public static void main(String[] args) throws Exception {
 
-        DBService dbService = new DBService();
+        DBService dbService = new DBServiceImpl();
         dbService.printConnectInfo();
 
 

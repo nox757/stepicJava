@@ -3,6 +3,7 @@ package dbService;
 
 
 
+import base.DBService;
 import dbService.dao.UsersDAO;
 import dbService.dataSets.UsersProfileDataSet;
 import org.hibernate.SessionFactory;
@@ -12,14 +13,14 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.*;
 
-public class DBService {
+public class DBServiceImpl implements DBService{
 
     private static final String hibernate_show_sql = "true";
     private static final String hibernate_hbm2ddl_auto = "update";
 
     private final SessionFactory sessionFactory;
 
-    public DBService() {
+    public DBServiceImpl() {
         Configuration configuration = getH2Configuration();
         sessionFactory = createSessionFactory(configuration);
     }
@@ -58,6 +59,7 @@ public class DBService {
         ServiceRegistry serviceRegistry = builder.build();
         return configuration.buildSessionFactory(serviceRegistry);
     }
+
 
     public void printConnectInfo() {
 
